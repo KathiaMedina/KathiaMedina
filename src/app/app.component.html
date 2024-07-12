@@ -1,4 +1,3 @@
-<!-- employee-form.component.html -->
 <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
   <div>
     <label for="name">Nombre del Empleado:</label>
@@ -18,3 +17,10 @@
   </div>
   <button type="submit" [disabled]="!employeeForm.valid">Calcular</button>
 </form>
+
+<div *ngIf="salaryResponse">
+  <p>Salario Regular: {{ salaryResponse.regularSalary }}</p>
+  <p>Salario por Horas Extras: {{ salaryResponse.overtimeSalary }}</p>
+  <p>Deducciones: {{ salaryResponse.deductions }}</p>
+  <p>Salario Neto: {{ salaryResponse.netSalary }}</p>
+</div>
